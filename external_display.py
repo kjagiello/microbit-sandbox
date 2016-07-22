@@ -79,7 +79,7 @@ def receive():
  
             # Give the user some feedback
             display.show(str(channel_idx))
-            sleep(1000)
+            sleep(750)
             display.clear()
             
         msg = radio.receive()
@@ -88,6 +88,7 @@ def receive():
             try:
                 display.show(eval(msg))
             except Exception as e:
+		display.show(Image.SAD)
                 print(repr(e))
 
 
